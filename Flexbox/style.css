@@ -3,10 +3,16 @@ body{
     width: 100vw;
 }
 
+.imagem{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+}
+
 .fofa{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
