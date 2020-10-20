@@ -1,0 +1,214 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+
+            /* var arr = [1,2,-7,10,5,-1,5,8]
+            
+            var arrPosi = []
+
+            var arrNeg = []
+            
+            for(var i = 0; i < arr.length ; i++ ){
+                if(arr[i]>0){
+                    arrPosi.push(arr[i])
+                } else {
+                    arrNeg.push(arr[i])
+                }
+            }
+
+            var soma= 0
+            //[1,3,10,5,5,8]
+
+            for(var i = 0; i<arrPosi.length; i++){
+                if(arrPosi[i]%2==1){
+                    soma += arrPosi[i]
+                }
+            }
+
+
+            document.write(arrPosi)
+            document.write('<br>')
+            document.write(arrNeg)
+            document.write('<br>')
+            document.write(soma)
+ */
+            //Faça uma função que retorna um array que tenha os numeros depois do ultimo negativo do array!
+            //  [1,-5,5,6,-3,2]   = [2]
+            //  [-1,2,5,6,4]    = [2,5,6,4]
+            //  [1,2,3]       = [1,2,3]
+   
+            //percorrer o array e checar se o numero é negativo ou nao
+            // se o numero for negativo ?
+
+            /*function depoisDoNegativo(array){
+
+                var arrayModificado = array
+
+                for(var i = 0; i < array.length; i++){
+                    if(array[i]<0){
+                        arrayModificado = array.slice(i+1)
+                    } 
+                }
+               
+                return arrayModificado
+                
+            }
+
+            document.write(depoisDoNegativo([1,2,-4,3,5]))*/
+
+            /*function cifrandoCesar(frase, deslocamento){
+
+                //pegar essa frase e separar em letras
+                //transformar cada letra em seu char
+                //dar o deslocamento nele
+                //retornar o char em letra
+
+                var arrayFrase = frase.split("")
+
+                var arrChar = []
+
+                for(var i = 0; i<arrayFrase.length; i++){
+                    arrChar.push(arrayFrase[i].charCodeAt() + deslocamento)
+                }
+
+                var arrCode = []
+
+                for(var i = 0; i<arrChar.length; i++){
+                    arrCode.push(String.fromCharCode(arrChar[i]))
+                }
+
+                return arrCode.join("")
+            }
+
+            document.write(cifrandoCesar('Ola Mundo', 4)) //[O,l,a, ,M,u,n,d,o]*/
+
+            /*function completeSeries(arr){
+
+                // verificar se tem numero repetido
+                //se tiver numero repetido retornar [0]
+                //descobrir o maior numero
+                //completar o array do 0 para o maior numero
+                //retornar o array completo
+
+                for(var i = 0; i<arr.length; i++){
+                    for(var j = i+1; j<arr.length;j++){
+                        if(arr[i]==arr[j]){
+                            return [0]
+                        }
+                    }
+                }
+
+                var maiorNumero = 0
+
+                for(var i = 0; i<arr.length; i++){
+                    if(arr[i]>maiorNumero){
+                        maiorNumero = arr[i]
+                    }
+                }
+
+                var resposta = []
+
+                for(var i = 0; i<=maiorNumero ; i++){
+                    resposta.push(i)
+                }
+
+                return resposta
+
+            }
+
+            document.write(completeSeries([0,2,6,4]))*/
+
+
+            /*[0,2,6,4]   // [0,1,2,3,4,5,6]
+            [0,1,0,4,5] //0
+            [0,9] //[0,1,2,3,4,5,6,7,8,9]
+            [0,2,3,0,2] //0
+
+            [0,1,0] //[0]*/
+
+
+            /*function media(notas){
+                //alguma coisa
+                //somar todos os numeros do array
+                //dividir pelo length do array
+
+                var soma = 0
+
+                for(var i = 0; i<notas.length;i++){
+                    soma += notas[i]
+                }
+
+                var mediaDasNotas = soma/notas.length
+
+
+                return mediaDasNotas
+            }
+
+
+            document.write(media([6,7,9]))*/
+
+            //['1','2']  '121' 
+            //['2','1']  '121'
+            //['33','22']   '223322'
+
+            /*function juntarNumeros(arr){
+
+
+            }
+
+            document.write(juntarNumeros(['22','1']))*/
+
+            // recebendo um array, que é uma sequencia, descobrir qual é o número seguinte ao erro da sequencia
+            //Ex:    [1,2,3,4,6]    retornar 6
+            //     [1,2,3,4,5,6,9,10,11]   retornar 9
+
+            /*function sequencia(arr){
+                //alguma coisa
+                //comparar o contador com o numero da posição array
+
+                for(var i = 0; i<arr.length; i++){
+                    if( arr[i] != (i+1) ){
+                        return arr[i]
+                    }
+                }
+
+            }
+
+            document.write(sequencia([1,2,3,4,6]))*/
+
+
+            //recebendo um array de idades(numeros), retornar os 2 mais velhos [segundoMaisVelho, MaisVelho]
+            // [1,5,50,60,54] retorna [54,60]
+            // [5,15,18,90,14] retornar [18,90]
+
+            var body = document.querySelector('body')
+
+            var button = document.createElement('button')
+
+            button.onclick = function somaUm(){
+                var numContador = parseInt(contador.innerText)
+                numContador++
+                contador.innerText = numContador
+            }
+
+            body.appendChild(button)
+
+            button.innerText = 'Somar um'
+
+            var contador = document.createElement('h1')
+
+            body.appendChild(contador)
+
+            contador.innerText = '0'
+
+
+        </script> 
+        
+        
+
+    </body>
+</html>
