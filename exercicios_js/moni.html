@@ -3,9 +3,37 @@
 
     </head>
     <body>
+
+        <div id="container" style="height: 500px;">
+            <h1 id="titulo">Passe o Mouse</h1>
+        </div>
         
 
         <script>
+            let body = document.querySelector('body')
+            let container = document.querySelector('#container')
+            let titulo = document.querySelector('#titulo')
+
+            container.addEventListener('mouseover', function(){
+                container.style.backgroundColor = 'red'
+            })
+
+            titulo.addEventListener('mouseover', function(event){
+                //event.stopPropagation()
+                titulo.style.backgroundColor = 'blue'
+            })
+
+            container.addEventListener('mouseout', function(){
+                container.style.backgroundColor = 'white'
+            })
+
+            titulo.addEventListener('mouseout', function(){
+                titulo.style.backgroundColor = 'white'
+            })
+
+            body.addEventListener('mouseover', function(){
+                titulo.style.margin = '100px'
+            })
 
             /* var arr = [1,2,-7,10,5,-1,5,8]
             
@@ -290,7 +318,7 @@
             //Se o numero seguinte for igual ao atual, quero filtrar o atual
             //[1,1,1,1,1,2,2,3,5,1] = [1,2,3,5,1]
 
-            arr = [ 1, 1, 1, 1, 1, 2, 2, 3, 5, 1 ]
+            /*arr = [ 1, 1, 1, 1, 1, 2, 2, 3, 5, 1 ]
 
             //arr[i+1]
             //[1,1,1,2,5]
@@ -303,7 +331,7 @@
             }
 
             var filtrado = arr.filter(isEqual)
-            console.log(filtrado)
+            console.log(filtrado)*/
 
 
 
