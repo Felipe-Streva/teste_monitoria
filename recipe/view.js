@@ -6,4 +6,6 @@ class View {
 
         textoRandom.textContent = modelo.advice
     }
+
+
 }

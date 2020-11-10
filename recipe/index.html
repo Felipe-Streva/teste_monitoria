@@ -5,6 +5,7 @@
         
         
         <script defer src="./models.js"></script>
+        <script defer src="./modelsBusca.js"></script>
         <script defer src="./view.js"></script>
         <script defer src="./controller.js"></script>
         <script defer src="./main.js"></script>
@@ -17,14 +18,14 @@
             <button id="buttonRandom" >Conselho Aleatório</button>
         </div>
 
-        <div class="search">
+        <form class="search" id="form">
             <input type="text" id="inputSearch"/>
-            <button id="buttonSearch" >Procurar Conselho</button>
+            <button id="buttonSearch" type="submit" >Procurar Conselho</button>
 
             <ul id="listaDeConselhos">
 
             </ul>
-        </div>
+        </form>
 
     </body>
 </html>
