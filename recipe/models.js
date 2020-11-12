@@ -1,5 +1,5 @@
 class Models {
-    constructor(advice){
+    constructor(advice="volte amanhã"){
         this._advice = advice
     }
 

@@ -32,13 +32,9 @@ class Controller {
 
             let dados = JSON.parse(this.responseText)
 
-            let listaConselho = dados.slips
+            let modelsBusca = new ModelsBusca(dados.slips, dados.query)
 
-            let listaDeConselhos = document.querySelector('#listaDeConselhos')
-
-            listaConselho.forEach(function(elemento){
-                listaDeConselhos.innerHTML += `<li> ${elemento.advice} </li>`
-            });
+            View.inserirHTMLPorBusca(modelsBusca.arrayDeConselhos)
             
         })
 
