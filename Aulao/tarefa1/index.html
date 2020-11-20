@@ -1,0 +1,53 @@
+<html>
+  <bodY>
+    
+
+    <input type='text' />
+    <button id='text'>Um text</button>
+    <button id='list'>Uma lista</button>
+    <p id='texto'></p>
+    <ul id='lista'></ul>
+
+    <script>
+
+        let text = document.querySelector('#text')
+        let list = document.querySelector('#list')
+        let texto = document.querySelector('#texto')
+        let lista = document.querySelector('#lista')
+        let input = document.querySelector('input')
+
+        text.addEventListener('click', function() {
+            texto.textContent = input.value
+        })
+
+        list.addEventListener('click', function() {
+            let array = input.value.split(',') // 'felie, nunes'    ['felipe' , 'nunes']
+            /*let html = ''
+            for(let i = 0; i<array.length;i++){
+                html += `<li>${array[i]}</li>`
+            }
+            lista.innerHTML = html*/
+
+            lista.innerHTML = array.map((element) => {
+                return `<li>${element}</li>`
+            }).join('')
+
+        })
+
+        text.addEventListener('mouseout', function(event){
+            text.style.backgroundColor = 'red'
+        })
+        text.addEventListener('mouseover', function(event){
+            text.style.backgroundColor = 'blue'
+        })
+        text.addEventListener('click', function(event){
+            event.stopPropagation()
+            text.style.backgroundColor = 'green'
+        })
+        let body = document.querySelector('body')
+        body.addEventListener('click', function(event){
+            body.style.backgroundColor = 'red'
+        })
+    </script>
+  </body>
+</html>
