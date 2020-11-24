@@ -1,0 +1,36 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+} 
+
+/* tag peso 1*/
+
+
+.body{
+    background-color: blue;
+}
+
+/* classe peso 10 */
+
+#body{
+    background-color: red;
+}
+
+/* id pes0 100*/
+
+.navbar{
+    background-color:red;
+}
+
+.sobre-mim{
+    height: 3000px ;
+}
+
+.contato{
+    height: 1000px;
+}
+
+.modal-style{
+    background-color: blue;
+}

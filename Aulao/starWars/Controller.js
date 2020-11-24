@@ -28,8 +28,6 @@ class Controller{
                 document.querySelector('body').style.backgroundColor = 'blue'
             }
 
-            
-
         })
 
         pedido.send()
