@@ -4,13 +4,10 @@
     </head>
     <body>
 
-        <div id="container" style="height: 500px;">
-            <h1 id="titulo">Passe o Mouse</h1>
-        </div>
         
 
         <script>
-            let body = document.querySelector('body')
+            /*let body = document.querySelector('body')
             let container = document.querySelector('#container')
             let titulo = document.querySelector('#titulo')
 
@@ -33,7 +30,7 @@
 
             body.addEventListener('mouseover', function(){
                 titulo.style.margin = '100px'
-            })
+            })*/
 
             /* var arr = [1,2,-7,10,5,-1,5,8]
             
@@ -332,6 +329,27 @@
 
             var filtrado = arr.filter(isEqual)
             console.log(filtrado)*/
+
+            //[1,-1,2,-2,3] return 3
+            //[1,-2,2,-4,-1] return -4
+
+            function solve(arr){
+  
+                for(let i = 0; i<arr.length; i++){
+                    let temPar = false
+                    for(let j = 0 ; j<arr.length; j++){
+                    if(arr[i] === -arr[j]){
+                        temPar = true
+                    }
+                    }
+                    if(!temPar){
+                    return arr[i]
+                    }
+                }
+
+            };
+
+            console.log(solve([1,-1,2,-2,3]))
 
 
 
