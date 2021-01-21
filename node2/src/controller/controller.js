@@ -18,10 +18,31 @@ class Controller{
         })
     }
 
+    static geraPaginaTesteUsuario(){
+        return ((req, resp) => {
+            const bd = [{
+                nome: "Felipe"
+            },
+            {
+                nome: "Juliete"
+            },
+            {
+                nome: "Scarlate"
+            }]
+
+            const userID = req.params.id
+            const user = bd[userID-1].nome
+
+            resp.send(`<h1>Bem-vindo ${user}</h1>`)
+            
+        })// O FULANO tem X laranjas e esse numero é PAR/IMPAR
+    }
+
     static enviaConselho(){
         return ((req, resp) => {
             const idade = req.body.idade
             const nome = req.body.nome
+            
 
             if(req.body.senha == 'resilia' && nome== 'Inara'){
                 resp.send(`Voce está loggada`)
@@ -34,8 +55,5 @@ class Controller{
         })
     }
 }
-
-
-
 
 module.exports = Controller

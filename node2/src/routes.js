@@ -6,6 +6,8 @@ module.exports = (app) => {
 
     app.get('/teste', Controller.geraPaginaTeste())
 
+    app.get('/teste/:id', Controller.geraPaginaTesteUsuario())
+
     app.get('/', (req, resp) => {
         resp.send('<h1>oi</h1>')
     })
@@ -13,3 +15,4 @@ module.exports = (app) => {
     app.post('/teste', Controller.enviaConselho())
 
 }
+
