@@ -9,10 +9,14 @@ module.exports = (app) => {
     app.get('/teste/:id', Controller.geraPaginaTesteUsuario())
 
     app.get('/', (req, resp) => {
-        resp.send('<h1>oi</h1>')
+        resp.send('<h1>redirecionado</h1>')
     })
 
     app.post('/teste', Controller.enviaConselho())
+
+    app.get('/user' , Controller.getAllUsers())
+
+    app.get('/user/:email', Controller.getUserByEmail())
 
 }
 

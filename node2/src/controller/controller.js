@@ -1,7 +1,30 @@
 const fetch = require('node-fetch');
+const UserDAO = require('../DAO/userDAO')
+
+
 
 class Controller{
-    
+
+
+    static getAllUsers(){
+        return ((req, resp) => {
+            UserDAO.getAllUsersInDB().then(rows => resp.send(rows))
+            .catch(err => {
+                console.log(err)
+                resp.send('deu erro')
+            })
+        })
+    }
+
+    static getUserByEmail(){
+        return ((req, resp) => {
+            UserDAO.getUserByEmailInDB(req.params.email).then(row => resp.send(row))
+            .catch(err => {
+                console.log(err)
+                resp.send('deu erro')
+            })
+        })
+    }
 
     static geraPaginaMonitoria(){
         return ((req, resp) => {
@@ -40,12 +63,12 @@ class Controller{
 
     static enviaConselho(){
         return ((req, resp) => {
-            const idade = req.body.idade
-            const nome = req.body.nome
-            
 
-            if(req.body.senha == 'resilia' && nome== 'Inara'){
-                resp.send(`Voce está loggada`)
+            const nome = req.body.nome
+            const senha = 'resilia'          
+
+            if(req.body.senha == senha){
+                resp.send(`<h1 style="color: red;">Voce está loggada</h1>`)
 
             } else {
                 resp.send(' senha incorreta')
