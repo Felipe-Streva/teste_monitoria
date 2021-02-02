@@ -22,5 +22,7 @@ module.exports = (app) => {
 
     app.delete('/user/:email' , Controller.deleteUser())
 
+    app.post('/login', Controller.checkLogin())
+
 }
 

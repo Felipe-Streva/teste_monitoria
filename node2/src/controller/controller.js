@@ -46,6 +46,21 @@ class Controller{
         })
     }
 
+    static checkLogin(){
+        return (async  (req, resp) => {
+            //fazer uma requisição para a rota /user/:email
+            const user = await UserDAO.getUserByEmailInDB(req.body.email)
+            //comparar a senha que veio do body, com a que veio da requisição
+            if(req.body.senha === user.senha){
+                resp.send('Voce esta logado')
+            } else {
+                resp.send('Senha incorreta')
+            }
+            // req.body.senha === row.senha
+            //responder se esta logado ou nao
+        })
+    }
+
     static deleteUser(){
         return ((req, resp) => {
             UserDAO.deleteUserInDB(req.params.email).then(msg => resp.send(msg))
