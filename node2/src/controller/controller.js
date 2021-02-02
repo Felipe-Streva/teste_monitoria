@@ -2,13 +2,25 @@ const fetch = require('node-fetch');
 const UserDAO = require('../DAO/userDAO')
 
 
-
 class Controller{
 
 
     static getAllUsers(){
+        return ( async (req, resp) => {
+            try {
+                const rows = await UserDAO.getAllUsersInDB()
+
+                resp.send(rows)  
+            } catch {
+                resp.send('deu ruim')
+            }
+                      
+            
+    })}
+
+    static getUserByEmail(){
         return ((req, resp) => {
-            UserDAO.getAllUsersInDB().then(rows => resp.send(rows))
+            UserDAO.getUserByEmailInDB(req.params.email).then(row => resp.send(row))
             .catch(err => {
                 console.log(err)
                 resp.send('deu erro')
@@ -16,9 +28,27 @@ class Controller{
         })
     }
 
-    static getUserByEmail(){
+    static insertUser(){
         return ((req, resp) => {
-            UserDAO.getUserByEmailInDB(req.params.email).then(row => resp.send(row))
+            if(req.body.email.length < 5){
+                resp.send('email invalido')
+            } else if(req.body.senha.length < 5){
+                resp.send('a senha precisa ter 5 digitos')
+            } else {
+                UserDAO.insertUserInDB(req.body).then(msg => resp.send(msg))
+                .catch(err => {
+                    console.log(err)
+                    resp.send('deu ruim')
+                })
+
+            }
+            
+        })
+    }
+
+    static deleteUser(){
+        return ((req, resp) => {
+            UserDAO.deleteUserInDB(req.params.email).then(msg => resp.send(msg))
             .catch(err => {
                 console.log(err)
                 resp.send('deu erro')

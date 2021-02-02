@@ -18,5 +18,9 @@ module.exports = (app) => {
 
     app.get('/user/:email', Controller.getUserByEmail())
 
+    app.post('/user' , Controller.insertUser())
+
+    app.delete('/user/:email' , Controller.deleteUser())
+
 }
 

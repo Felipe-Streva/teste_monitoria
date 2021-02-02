@@ -7,8 +7,8 @@ db.serialize(() => {
 
     db.run(`INSERT INTO user (email, senha) VALUES ('fe@resilia.com', 'jaspion')`)
 
-    db.run(`INSERT INTO user (email, senha) VALUES ('thome@resilia.com', 'jaspion')`)
+    db.run(`INSERT INTO user (email, senha) VALUES ('thome@resilia.com', 'kingkong')`)
 
-    db.run(`INSERT INTO user (email, senha) VALUES ('erica@resilia.com', 'jaspion')`)
+    db.run(`INSERT INTO user (email, senha) VALUES ('erica@resilia.com', 'godzilla')`)
 
 })
