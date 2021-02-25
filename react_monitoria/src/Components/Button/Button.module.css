@@ -1,0 +1,14 @@
+.button{
+    background-color: blueviolet;
+    color: black;
+    border-radius: 15px;
+    height: 40px;
+    font-size: 15px;
+    margin: 5px;
+
+}
+
+.button:hover{
+    background-color: black;
+    color: blueviolet;
+}
