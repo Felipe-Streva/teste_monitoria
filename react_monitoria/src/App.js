@@ -1,6 +1,9 @@
+import React from 'react'
 import './App.css';
 import Header from './Components/Header/Header'
 import Button from './Components/Button/Button'
+
+import CardGroup from './Components/CardGroup/CardGroup'
 
 function App() {
 
@@ -25,11 +28,13 @@ function App() {
 
       <div style={{display: 'flex'}}>
 
-        <Button largura='200px' onClick={enviarClick}>Enviar</Button>
+        <Button largura='400px' onClick={enviarClick}>Enviar</Button>
         <Button largura='150px' onClick={()=>alert('cancelado')}>Cancelar</Button>
 
-      </div>
+        
 
+      </div>
+      <CardGroup />
 
     </div>
   );

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './Button.module.css';
 
-export default class Button extends React.Component{
+export default class Button extends Component{
 
     constructor(props){
         super(props);
@@ -13,6 +13,10 @@ export default class Button extends React.Component{
         console.log('cliquei')
         this.setState({disabled: true})
         setTimeout(()=>{this.setState({disabled: false})},3000)
+    }
+
+    componentDidUpdate(){
+        console.log(`A propriedade disabled é ${this.state.disabled}`)
     }
 
     render(){
