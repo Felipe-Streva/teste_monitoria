@@ -22,6 +22,7 @@ export default class CardGroup extends Component{
             <div className={styles.div}>
                 {this.state.results.map((user, index) => 
                     <Card nome={user.name.first} img={user.picture.thumbnail} key={index} />
+                
                 )}
             </div>
         )
