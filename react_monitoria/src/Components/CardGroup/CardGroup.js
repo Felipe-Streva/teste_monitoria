@@ -1,30 +1,37 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect} from 'react';
 import styles from './CardGroup.module.css';
 import Card from '../Card/Card'
+import Button from '../Button/Button'
 
-export default class CardGroup extends Component{
+export default function CardGroup (props){
 
-    constructor(props){
-        super(props)
-        this.state = {results: []}
-    }
 
-    componentDidMount(){
+    const [dados, setDados] = useState({results: []})
+
+    const montarCards = () => {
         fetch('https://randomuser.me/api?results=10').then(data=>data.json())
             .then(results => {
-                this.setState(results)
-            } )
+                setDados(results)
+            })
     }
 
+    useEffect(() => {
+        montarCards()
+    }, [])
 
-    render(){
-        return (
-            <div className={styles.div}>
-                {this.state.results.map((user, index) => 
-                    <Card nome={user.name.first} img={user.picture.thumbnail} key={index} />
-                
-                )}
-            </div>
-        )
+    const attPessoas = () => {
+        montarCards()
     }
+        
+
+    return (
+        <div className={styles.div}>
+            {dados.results.map((user, index) => 
+                <Card nome={user.name.first} img={user.picture.thumbnail} key={index} />
+            
+            )}
+            <Button largura='400px' onClick={attPessoas} >Enviar</Button>
+        </div>
+    )
+
 }
